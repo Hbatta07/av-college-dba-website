@@ -3,12 +3,44 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-    -webkit-tap-highlight-color: transparent;
+  body {
+    background-color: #F7F4ED;
+    color: #252525;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
-  body {
-    @apply bg-brand-bg text-brand-textPrimary antialiased selection:bg-brand-secondary selection:text-white;
+  h1, h2, h3, h4, h5, h6 {
+    color: #172033;
+    letter-spacing: -0.01em;
   }
+}
+
+@layer utilities {
+  .bg-brand-bg {
+    background-color: #F7F4ED;
+  }
+  .text-brand-textPrimary {
+    color: #252525;
+  }
+  .border-academic {
+    border-color: #E5E0D6;
+  }
+}
+
+/* Academic structural details */
+.academic-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E0D6;
+  border-radius: 2px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.academic-card:hover {
+  border-color: #B08D57;
+  box-shadow: 0 2px 8px rgba(23, 32, 51, 0.06);
+}
+
+.academic-divider {
+  height: 1px;
+  background: linear-gradient(90deg, #B08D57 0%, #E5E0D6 50%, transparent 100%);
 }
