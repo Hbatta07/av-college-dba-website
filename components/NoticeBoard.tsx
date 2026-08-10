@@ -38,7 +38,7 @@ export default function NoticeBoard({ notices }: NoticeBoardProps) {
               </span>
               <div>
                 <h3 className="text-sm font-semibold text-[#172033] hover:text-[#7A263A]">
-                  <Link href={`/notices#${notice.id}`}>{notice.title}</Link>
+                  <Link href={"/notices#" + notice.id}>{notice.title}</Link>
                 </h3>
                 <span className="text-[11px] text-[#252525]/60 uppercase tracking-wider">
                   {notice.category}
