@@ -6,16 +6,10 @@
   body {
     background-color: #F7F4ED;
     color: #252525;
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    color: #172033;
-    letter-spacing: -0.015em;
   }
 }
 
-/* Institutional Emblem Watermark Effect */
+/* Institutional Hologram Watermark */
 .watermark-bg {
   position: relative;
 }
@@ -23,31 +17,17 @@
 .watermark-bg::before {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 180px;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 500px;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 500px;
   height: 500px;
-  background-image: url('/images/av-college-logo.png');
+  background-image: url('/images/av-college-logo.png'), url('/images/av-college-logo.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  opacity: 0.03;
+  opacity: 0.05;
   pointer-events: none;
   z-index: 0;
-  mix-blend-multiply: multiply;
-}
-
-.academic-border {
-  border: 1px solid #E5E0D6;
-}
-
-.gold-rule {
-  height: 2px;
-  background-color: #B08D57;
-}
-
-.gold-rule-thin {
-  height: 1px;
-  background-color: #B08D57;
 }
