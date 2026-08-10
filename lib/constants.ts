@@ -1,23 +1,3 @@
-export interface Notice {
-  id: string;
-  title: string;
-  category: 'EXAM' | 'OU' | 'PLACEMENT' | 'GENERAL';
-  date: string;
-  description: string;
-  isUrgent?: boolean;
-  link?: string;
-}
-
-export interface FacultyMember {
-  id: string;
-  name: string;
-  designation: string;
-  qualification: string;
-  experience: string;
-  specialization: string;
-  email: string;
-}
-
 export const COLLEGE_INFO = {
   name: 'A.V. College of Arts, Science & Commerce',
   status: 'Autonomous Institution | Affiliated to Osmania University',
@@ -28,8 +8,13 @@ export const COLLEGE_INFO = {
   phonePG: '040-27610241',
   emailUG: 'avcollege@gmail.com',
   emailPG: 'avpgcentre@gmail.com',
-};
+} as const;
 
-export const NOTICES_DATA: Notice[] = [];
-
-export const FACULTY_DATA: FacultyMember[] = [];
+export const NAV_LINKS = [
+  { name: 'Home', href: '/' },
+  { name: 'Academics', href: '/academics' },
+  { name: 'Admissions', href: '/admissions' },
+  { name: 'Faculty', href: '/faculty' },
+  { name: 'Notices', href: '/notices' },
+  { name: 'Career Hub', href: '/career-hub' },
+] as const;
