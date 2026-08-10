@@ -28,7 +28,6 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-4 group">
-            {/* Logo image with blend-multiply to hide white box cleanly */}
             <div className="relative w-14 h-14 sm:w-16 sm:h-16 flex-shrink-0">
               <Image
                 src="/images/av-college-logo.png"
