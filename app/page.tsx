@@ -1,7 +1,7 @@
 import Hero from "@/components/Hero";
 import NoticeBoard from "@/components/NoticeBoard";
 
-const officialNotices = [
+const fallbackNotices = [
   {
     id: "mba-2sem-regular-2026",
     title: "Time Table: MBA II-Semester (Regular) Examinations August-2026",
@@ -14,26 +14,52 @@ const officialNotices = [
     date: "01 Aug 2026",
     category: "Examinations",
   },
-  {
-    id: "pg-2sem-regular-2026",
-    title: "Time Table: PG (CBCS-DAY) II-Semester (Regular) Examinations August-2026",
-    date: "01 Aug 2026",
-    category: "Examinations",
-  },
 ];
 
-export default function Home() {
+async function getNoticesFromSheet() {
+  const SHEET_CSV_URL =
+    "https://docs.google.com/spreadsheets/d/1dY_bTuQJ1qyeBqEkGvqBlJbuK48mVeraXMiEgmPm4Zc/export?format=csv";
+
+  try {
+    const res = await fetch(SHEET_CSV_URL, {
+      next: { revalidate: 30 }, // Refresh every 30 seconds
+    });
+
+    if (!res.ok) return fallbackNotices;
+
+    const text = await res.text();
+    const lines = text.split("\n").filter((line) => line.trim() !== "");
+
+    if (lines.length <= 1) return fallbackNotices;
+
+    const notices = lines.slice(1).map((line, idx) => {
+      const cols = line.split(",").map((col) => col.trim().replace(/^"|"$/g, ""));
+      return {
+        id: cols[0] || String(idx + 1),
+        title: cols[1] || "",
+        date: cols[2] || "",
+        category: cols[3] || "General",
+        pdfUrl: cols[4] || undefined,
+      };
+    });
+
+    return notices.filter((n) => n.title !== "");
+  } catch (error) {
+    console.error("Sheet Fetch Error:", error);
+    return fallbackNotices;
+  }
+}
+
+export default async function Home() {
+  const notices = await getNoticesFromSheet();
+
   return (
     <div className="watermark-bg space-y-12 pb-12 overflow-hidden">
-      {/* Editorial Campus Hero Section */}
       <Hero />
 
-      {/* Main Content Area */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 relative z-10">
-        {/* Academic Notice Board */}
-        <NoticeBoard notices={officialNotices} />
+        <NoticeBoard notices={notices} />
 
-        {/* Editorial About Section */}
         <div className="bg-white/90 backdrop-blur-sm border border-[#E5E0D6] p-6 sm:p-8">
           <div className="border-l-4 border-[#7A263A] pl-4">
             <span className="text-xs uppercase tracking-wider text-[#7A263A] font-semibold">
