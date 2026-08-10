@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Column 1: Identity */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="relative w-12 h-12 bg-white p-1 rounded-none flex-shrink-0">
+              <div className="relative w-12 h-12 bg-white p-1 flex-shrink-0">
                 <Image
                   src="/images/av-college-logo.png"
                   alt="A.V. College Emblem"
