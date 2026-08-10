@@ -24,17 +24,17 @@ const officialNotices = [
 
 export default function Home() {
   return (
-    <div className="space-y-12 pb-12">
+    <div className="watermark-bg space-y-12 pb-12 overflow-hidden">
       {/* Editorial Campus Hero Section */}
       <Hero />
 
       {/* Main Content Area */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-        {/* Academic Notice Board with Real Notices */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 relative z-10">
+        {/* Academic Notice Board */}
         <NoticeBoard notices={officialNotices} />
 
         {/* Editorial About Section */}
-        <div className="bg-white border border-[#E5E0D6] p-6 sm:p-8">
+        <div className="bg-white/90 backdrop-blur-sm border border-[#E5E0D6] p-6 sm:p-8">
           <div className="border-l-4 border-[#7A263A] pl-4">
             <span className="text-xs uppercase tracking-wider text-[#7A263A] font-semibold">
               Department Overview
