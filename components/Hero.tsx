@@ -42,12 +42,12 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Authentic Campus Visual Anchor */}
+          {/* Right Column: Campus Visual Anchor */}
           <div className="lg:col-span-5">
             <div className="bg-white p-2 border border-[#E5E0D6] shadow-sm">
               <div className="relative h-64 sm:h-72 w-full overflow-hidden border border-[#E5E0D6]">
                 <Image
-                  src="/images/campus-pg-centre.jpg"
+                  src="/images/campus-pg-centre.png"
                   alt="A.V. College Post-Graduate Centre Building"
                   fill
                   className="object-cover"
