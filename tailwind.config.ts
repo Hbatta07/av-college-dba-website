@@ -16,7 +16,7 @@ const config: Config = {
           gold: "#B08D57",
           stone: "#E5E0D6",
           dark: "#252525",
-          // Backward-compatible tokens mapped to the institutional palette
+          // Backward compatibility mappings
           bg: "#F7F4ED",
           primary: "#172033",
           secondary: "#7A263A",
@@ -31,11 +31,11 @@ const config: Config = {
         sm: "2px",
         md: "4px",
         lg: "4px",
-        xl: "6px",
+        none: "0px",
       },
       boxShadow: {
-        subtle: "0 1px 3px rgba(23, 32, 51, 0.05)",
-        academic: "0 2px 8px rgba(23, 32, 51, 0.08)",
+        subtle: "0 1px 3px rgba(23, 32, 51, 0.04)",
+        academic: "0 2px 8px rgba(23, 32, 51, 0.06)",
       },
     },
   },
