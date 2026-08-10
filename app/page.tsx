@@ -1,24 +1,24 @@
 import Hero from "@/components/Hero";
 import NoticeBoard from "@/components/NoticeBoard";
 
-const sampleNotices = [
+const officialNotices = [
   {
-    id: "1",
-    title: "MBA Examination Schedule & Guidelines",
-    date: "10 Aug 2026",
+    id: "mba-2sem-regular-2026",
+    title: "Time Table: MBA II-Semester (Regular) Examinations August-2026",
+    date: "01 Aug 2026",
     category: "Examinations",
   },
   {
-    id: "2",
-    title: "Departmental Academic Orientation Program",
-    date: "05 Aug 2026",
-    category: "Academic",
+    id: "mba-1sem-backlog-2026",
+    title: "Time Table: MBA I-Semester (Backlog) Examinations August-2026",
+    date: "01 Aug 2026",
+    category: "Examinations",
   },
   {
-    id: "3",
-    title: "Placement Cell & Campus Recruitment Drive",
-    date: "28 Jul 2026",
-    category: "Placements",
+    id: "pg-2sem-regular-2026",
+    title: "Time Table: PG (CBCS-DAY) II-Semester (Regular) Examinations August-2026",
+    date: "01 Aug 2026",
+    category: "Examinations",
   },
 ];
 
@@ -30,8 +30,8 @@ export default function Home() {
 
       {/* Main Content Area */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-        {/* Academic Notice Board */}
-        <NoticeBoard notices={sampleNotices} />
+        {/* Academic Notice Board with Real Notices */}
+        <NoticeBoard notices={officialNotices} />
 
         {/* Editorial About Section */}
         <div className="bg-white border border-[#E5E0D6] p-6 sm:p-8">
