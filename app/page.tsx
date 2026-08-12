@@ -22,7 +22,7 @@ async function getNoticesFromSheet() {
 
   try {
     const res = await fetch(SHEET_CSV_URL, {
-      next: { revalidate: 30 }, // Refresh every 30 seconds
+      next: { revalidate: 30 },
     });
 
     if (!res.ok) return fallbackNotices;
@@ -54,7 +54,7 @@ export default async function Home() {
   const notices = await getNoticesFromSheet();
 
   return (
-    <div className="watermark-bg space-y-12 pb-12 overflow-hidden">
+    <div className="watermark-bg space-y-12 pb-12 overflow-hidden min-h-screen">
       <Hero />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 relative z-10">
