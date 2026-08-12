@@ -9,7 +9,7 @@
   }
 }
 
-/* Institutional Hologram Watermark */
+/* Subtle Large Emblem Background Watermark */
 .watermark-bg {
   position: relative;
 }
@@ -17,17 +17,17 @@
 .watermark-bg::before {
   content: "";
   position: absolute;
-  top: 180px;
+  top: 120px;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
-  max-width: 500px;
-  height: 500px;
-  background-image: url('/images/av-college-logo.png'), url('/images/av-college-logo.jpg');
+  max-width: 650px;
+  height: 650px;
+  background-image: url('/images/av-college-logo.png');
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center top;
   background-size: contain;
-  opacity: 0.05;
+  opacity: 0.04;
   pointer-events: none;
   z-index: 0;
 }
