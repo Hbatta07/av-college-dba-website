@@ -2,14 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    background-color: #F7F4ED;
-    color: #252525;
-  }
+:root {
+  --color-navy: #172033;
+  --color-ivory: #F7F4ED;
+  --color-burgundy: #7A263A;
+  --color-gold: #B08D57;
+  --color-stone: #E5E0D6;
+  --color-dark: #252525;
 }
 
+body {
+  background-color: var(--color-ivory);
+  color: var(--color-dark);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Institutional Portal Table Styles */
+.portal-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.portal-table th {
+  background-color: var(--color-navy);
+  color: #ffffff;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 2px solid var(--color-gold);
+}
+
+.portal-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-stone);
+  font-size: 0.875rem;
+}
+
+.portal-table tr:hover {
+  background-color: rgba(122, 38, 58, 0.03);
+}
+
+/* Subtle Institutional Background Watermark */
 .watermark-bg {
   position: relative;
-  min-height: 100vh;
+}
+
+.watermark-bg::before {
+  content: "";
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  height: 600px;
+  background-image: url('/images/av-college-logo.png');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
 }
