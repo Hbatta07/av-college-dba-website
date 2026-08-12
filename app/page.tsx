@@ -45,7 +45,6 @@ async function getNoticesFromSheet() {
 
     return notices.filter((n) => n.title !== "");
   } catch (error) {
-    console.error("Sheet Fetch Error:", error);
     return fallbackNotices;
   }
 }
@@ -54,7 +53,7 @@ export default async function Home() {
   const notices = await getNoticesFromSheet();
 
   return (
-    <div className="watermark-bg space-y-12 pb-12 overflow-hidden min-h-screen">
+    <div className="watermark-bg space-y-12 pb-12 overflow-hidden">
       <Hero />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 relative z-10">
