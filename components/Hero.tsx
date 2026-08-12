@@ -1,87 +1,71 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="bg-[#F7F4ED] border-b border-[#E5E0D6] py-8 lg:py-12 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+    <section className="bg-white border-b border-[#E5E0D6] py-6 sm:py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
           
-          {/* Left Column: Academic Editorial Text */}
-          <div className="lg:col-span-7 space-y-5">
-            <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-[#7A263A] text-white text-xs uppercase tracking-wider font-semibold rounded-none">
-              <span>Established Academic Department</span>
+          {/* Factual Academic Text Column */}
+          <div className="md:col-span-8 space-y-3">
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-[#F7F4ED] border border-[#E5E0D6] text-xs text-[#7A263A] font-semibold">
+              <span>ESTABLISHED 1991</span>
+              <span>•</span>
+              <span>OSMANIA UNIVERSITY SYLLABUS</span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#172033] leading-tight">
-              Master of Business Administration (MBA)
-            </h1>
+            <h2 className="text-xl sm:text-2xl font-bold text-[#172033] tracking-tight">
+              Department of Business Administration (MBA)
+            </h2>
 
-            <div className="w-16 h-[2px] bg-[#B08D57]" />
-
-            <p className="text-[#252525] text-base leading-relaxed max-w-2xl">
-              Fostering managerial competence, ethical leadership, and academic rigor at the 
-              A.V. College Post-Graduate Centre. Affiliated to Osmania University and committed 
-              to academic excellence in management education.
+            <p className="text-sm text-[#252525] leading-relaxed">
+              The MBA Programme at A.V. College is a two-year full-time postgraduate course recognized by the All India Council for Technical Education (AICTE) and affiliated to Osmania University, Hyderabad. The curriculum provides rigorous management education with dual specializations in Finance, Marketing, and Human Resource Management.
             </p>
 
-            <div className="pt-2 flex flex-wrap gap-4">
+            <div className="pt-2 flex flex-wrap gap-3">
+              <Link
+                href="/notices"
+                className="px-4 py-2 bg-[#7A263A] text-white text-xs font-semibold hover:bg-[#5C1B2B] transition-colors"
+              >
+                View Official Notices
+              </Link>
               <Link
                 href="/admissions"
-                className="px-5 py-2.5 bg-[#172033] text-white text-sm font-medium hover:bg-[#7A263A] transition-colors border border-[#172033]"
+                className="px-4 py-2 bg-white border border-[#172033] text-[#172033] text-xs font-semibold hover:bg-[#F7F4ED] transition-colors"
               >
-                Admissions & Eligibility
+                Admission Criteria
               </Link>
               <Link
                 href="/academics"
-                className="px-5 py-2.5 bg-transparent text-[#172033] text-sm font-medium hover:bg-white border border-[#B08D57] transition-colors"
+                className="px-4 py-2 bg-white border border-[#E5E0D6] text-[#252525] text-xs font-semibold hover:bg-[#F7F4ED] transition-colors"
               >
-                Academic Programme
+                Course Structure
               </Link>
             </div>
           </div>
 
-          {/* Right Column: Campus Visual Anchor */}
-          <div className="lg:col-span-5">
-            <div className="bg-white p-2 border border-[#E5E0D6] shadow-sm">
-              <div className="relative h-64 sm:h-72 w-full overflow-hidden border border-[#E5E0D6]">
-                <Image
-                  src="/images/campus-pg-centre.png"
-                  alt="A.V. College Post-Graduate Centre Building"
-                  fill
-                  className="object-cover"
-                  priority
+          {/* Campus Photograph Visual */}
+          <div className="md:col-span-4">
+            <div className="border border-[#E5E0D6] p-1.5 bg-[#F7F4ED]">
+              <div className="relative h-44 sm:h-48 w-full bg-[#E5E0D6] overflow-hidden">
+                <img
+                  src="/images/campus-photo.jpg"
+                  alt="A.V. College PG Centre Campus"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    // Fallback if local image is missing
+                    (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=800";
+                  }}
                 />
               </div>
-              <p className="text-[11px] text-[#252525]/70 italic mt-2 text-center">
-                A.V. College Post-Graduate Centre Campus
+              <p className="text-[11px] text-center text-[#252525]/70 mt-1 font-medium">
+                Post-Graduate Centre Campus, Gagan Mahal, Hyderabad
               </p>
             </div>
           </div>
 
         </div>
-
-        {/* Institutional Facts Strip */}
-        <div className="mt-10 pt-6 border-t border-[#E5E0D6] grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
-          <div className="border-l-2 border-[#B08D57] pl-3">
-            <p className="text-xs uppercase tracking-wider text-[#7A263A] font-semibold">Programme</p>
-            <p className="text-sm font-bold text-[#172033] mt-0.5">2-Year Full-Time MBA</p>
-          </div>
-          <div className="border-l-2 border-[#B08D57] pl-3">
-            <p className="text-xs uppercase tracking-wider text-[#7A263A] font-semibold">Affiliation</p>
-            <p className="text-sm font-bold text-[#172033] mt-0.5">Osmania University</p>
-          </div>
-          <div className="border-l-2 border-[#B08D57] pl-3">
-            <p className="text-xs uppercase tracking-wider text-[#7A263A] font-semibold">Status</p>
-            <p className="text-sm font-bold text-[#172033] mt-0.5">Autonomous Institution</p>
-          </div>
-          <div className="border-l-2 border-[#B08D57] pl-3">
-            <p className="text-xs uppercase tracking-wider text-[#7A263A] font-semibold">Location</p>
-            <p className="text-sm font-bold text-[#172033] mt-0.5">Gaganmahal, Hyderabad</p>
-          </div>
-        </div>
-
       </div>
     </section>
   );
